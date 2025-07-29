@@ -51,7 +51,7 @@ export class NotificationService {
       console.warn('Service Worker not registered');
       return;
     }
-
+console.log(":")
     const hasPermission = await this.requestPermission();
     if (!hasPermission) {
       console.warn('Notification permission not granted');
@@ -72,6 +72,7 @@ export class NotificationService {
   }
 
   async sendDemoNotification(): Promise<void> {
+    console.log("dar...");
     await this.sendNotification('🎓 EduApp Demo', {
       body: 'This is a demo push notification! Your assignments, grades, and announcements would appear here.',
       icon: '/icon-192x192.png',

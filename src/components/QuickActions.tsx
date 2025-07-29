@@ -22,6 +22,9 @@ interface QuickAction {
 interface QuickActionsProps {
   onSendNotification: () => void;
 }
+const onSendNotification=()=>{
+  console.log("Demo notification sent!");
+}
 
 export function QuickActions({ onSendNotification }: QuickActionsProps) {
   const actions: QuickAction[] = [

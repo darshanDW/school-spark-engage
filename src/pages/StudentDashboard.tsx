@@ -30,11 +30,13 @@ export function StudentDashboard() {
 
   const handleSendNotification = async () => {
     try {
+      console.log("Sending demo notification...");
       await notificationService.sendDemoNotification();
       toast({
         title: "Demo notification sent! 🎓",
         description: "Check your browser notifications to see the demo.",
       });
+      console.log("Notification sent successfully");
     } catch (error) {
       console.error('Error sending notification:', error);
       toast({
