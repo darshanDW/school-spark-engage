@@ -1,7 +1,7 @@
 const CACHE_NAME = 'eduapp-v1';
 const urlsToCache = [
   '/',
-  '/index.html',
+  // '/index.html',
   '/favicon.ico',
   '/manifest.json',
   '/icon-192x192.png'
