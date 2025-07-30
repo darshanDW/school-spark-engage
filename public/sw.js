@@ -1,9 +1,10 @@
 const CACHE_NAME = 'eduapp-v1';
 const urlsToCache = [
   '/',
-  '/static/js/bundle.js',
-  '/static/css/main.css',
-  '/manifest.json'
+  '/index.html',
+  '/favicon.ico',
+  '/manifest.json',
+  '/icon-192x192.png'
 ];
 
 self.addEventListener('install', (event) => {
