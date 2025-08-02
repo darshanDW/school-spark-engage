@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Poppins:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,15 +8,15 @@
 
 @layer base {
   :root {
-    /* Academic Color Palette */
-    --background: 30 120 180; /* lighter green */
-    --foreground: 215 28% 17%;
+    /* Trendy Academic Color Palette */
+    --background: 222 40% 96%;         /* soft bluish gray */
+    --foreground: 222 28% 18%;         /* deep slate */
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
+    --card: 0 0% 100%;                 /* white */
+    --card-foreground: 222 28% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
+    --popover: 220 40% 98%;            /* off-white with a hint of blue */
+    --popover-foreground: 222 28% 18%;
 
     /* Academic Blue Primary */
     --primary: 217 91% 60%;
@@ -38,8 +38,8 @@
     --warning-foreground: 0 0% 98%;
     --warning-hover: 35 91% 57%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 222 40% 92%;              /* soft blue-gray */
+    --muted-foreground: 222 15% 45%;
 
     --accent: 217 91% 95%;
     --accent-foreground: 217 91% 60%;
@@ -47,28 +47,63 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 222 20% 90%;             /* subtle blue-gray border */
+    --input: 222 20% 90%;
     --ring: 217 91% 60%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Academic Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217, 80%, 75%), hsl(262 83% 58%));
-    --gradient-secondary: linear-gradient(135deg, hsl(262, 40%, 79%), hsl(217 91% 60%));
-    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 55%));
-    --gradient-card: linear-gradient(145deg, rgba(80, 95, 110, 0.619), rgba(255,255,255,0.7));
-    
+    /* Trendy Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217, 80%, 92%), hsl(262, 83%, 98%));
+    --gradient-secondary: linear-gradient(135deg, hsl(262, 40%, 94%), hsl(217, 91%, 98%));
+    --gradient-success: linear-gradient(135deg, hsl(142, 71%, 90%), hsl(142, 71%, 98%));
+    --gradient-card: linear-gradient(135deg, rgba(80, 95, 110, 0.07), rgba(255,255,255,0.85));
+
+    /* Glassmorphism */
+    --glass-blur: blur(24px);
+    --glass-bg: rgba(255,255,255,0.55);
+
     /* Shadows */
-    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-primary: 0 10px 30px -10px hsla(217, 91%, 60%, 0.266);
+    --shadow-card: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    --shadow-card-hover: 0 16px 40px 0 rgba(31, 38, 135, 0.10);
+    --shadow-primary: 0 10px 30px -10px hsla(217, 91%, 60%, 0.12);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
 
+     --display-font: 'Poppins', 'Inter', sans-serif;
+    --body-font: 'Inter', sans-serif;
+  }
+   h1, h2, h3, h4, h5, h6, .display-font {
+    font-family: var(--display-font);
+    letter-spacing: -0.5px;
+    font-weight: 700;
+    line-height: 1.1;
+    animation: fade-in-up 0.7s cubic-bezier(0.4,0,0.2,1);
+  
+  }
+  body::before {
+  content: "";
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at top left, hsl(217, 91%, 85%), transparent);
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(80px);
+}
+   body {
+    font-family: var(--body-font);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background: linear-gradient(120deg, hsl(217, 80%, 98%) 0%, hsl(262, 83%, 98%) 100%);
+    min-height: 100vh;
+    animation: bg-fade-in 1.2s cubic-bezier(0.4,0,0.2,1);
+  }
+}
+ 
   .dark {
     --background: 215 28% 17%;
     --foreground: 210 40% 98%;
@@ -85,8 +120,8 @@
     --secondary: 262 83% 58%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217.2 32.6% 17.5%; 
+     --muted-foreground: 220 20.2% 100.1%;
 
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 217 91% 60%;
@@ -100,7 +135,7 @@
 
     --gradient-card: linear-gradient(145deg, rgba(0,0,0,0.2), rgba(0,0,0,0.1));
   }
-}
+
 
 @layer base {
   * {
@@ -114,16 +149,23 @@
 }
 
 @layer components {
-  .card-gradient {
+.card-gradient {
     background: var(--gradient-card);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: var(--glass-blur);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border);
+        animation: card-pop-in 0.7s cubic-bezier(0.68,-0.55,0.27,1.55);
+
   }
 
   .glass-effect {
-    backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+ .glass-effect {
+    backdrop-filter: var(--glass-blur);
+    background: var(--glass-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
   }
 
   .hover-lift {
@@ -146,7 +188,31 @@
   .stagger-3 { animation-delay: 0.3s; }
   .stagger-4 { animation-delay: 0.4s; }
 }
+@keyframes card-pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.03) translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 
+@keyframes bg-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
 @keyframes bounce-in {
   0% {
     opacity: 0;
@@ -172,7 +238,31 @@
     transform: translateY(0);
   }
 }
+@keyframes card-pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.03) translateY(-4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 
+@keyframes bg-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
 @layer base {
   * {
     @apply border-border;
@@ -181,4 +271,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
+}}
