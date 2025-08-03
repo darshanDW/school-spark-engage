@@ -9,7 +9,7 @@
 @layer base {
   :root {
     /* Trendy Academic Color Palette */
-    --background: 222 40% 96%;         /* soft bluish gray */
+    --background: 198, 80%, 83%;
     --foreground: 222 28% 18%;         /* deep slate */
 
     --card: 0 0% 100%;                 /* white */
@@ -23,7 +23,7 @@
     --primary-foreground: 0 0% 98%;
     --primary-hover: 217 91% 55%;
 
-    /* Academic Purple Secondary */
+    /* Academic Purhple Secondary */
     --secondary: 262 83% 58%;
     --secondary-foreground: 0 0% 98%;
     --secondary-hover: 262 83% 53%;
@@ -57,7 +57,7 @@
     --gradient-primary: linear-gradient(135deg, hsl(217, 80%, 92%), hsl(262, 83%, 98%));
     --gradient-secondary: linear-gradient(135deg, hsl(262, 40%, 94%), hsl(217, 91%, 98%));
     --gradient-success: linear-gradient(135deg, hsl(142, 71%, 90%), hsl(142, 71%, 98%));
-    --gradient-card: linear-gradient(135deg, rgba(80, 95, 110, 0.07), rgba(255,255,255,0.85));
+    --gradient-card: linear-gradient(135deg, rgba(12, 39, 66, 0.108), rgba(241, 220, 220, 0.564));
 
     /* Glassmorphism */
     --glass-blur: blur(24px);
@@ -65,10 +65,11 @@
 
     /* Shadows */
     --shadow-card: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-    --shadow-card-hover: 0 16px 40px 0 rgba(31, 38, 135, 0.10);
+    --shadow-card-hover: 0 16px 40px 0 rgba(31, 38, 135, 0.199);
     --shadow-primary: 0 10px 30px -10px hsla(217, 91%, 60%, 0.12);
 
     /* Animations */
+    
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
@@ -154,7 +155,8 @@
     backdrop-filter: var(--glass-blur);
     border-radius: var(--radius);
     box-shadow: var(--shadow-card);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
+    color: var(--card-foreground);
         animation: card-pop-in 0.7s cubic-bezier(0.68,-0.55,0.27,1.55);
 
   }
@@ -164,7 +166,7 @@
     backdrop-filter: var(--glass-blur);
     background: var(--glass-bg);
     border-radius: var(--radius);
-    border: 1px solid var(--border);
+    border: 3px solid var(--border);
     box-shadow: var(--shadow-card);
   }
 

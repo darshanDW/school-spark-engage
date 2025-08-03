@@ -90,7 +90,7 @@ export function QuickActions({ onSendNotification }: QuickActionsProps) {
             <Button
               key={action.title}
               variant="ghost"
-              className={`h-auto flex flex-col items-center gap-3 p-4 hover-lift transition-all duration-300 hover:bg-${action.color} hover:bg-opacity-10 bounce-in`}
+              className={`h-auto flex flex-col items-center gap-3 p-4 hover-lift transition-all duration-300 hover:bg-opacity-10 bounce-in`}
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={action.action}
             >
